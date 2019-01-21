@@ -8,23 +8,18 @@
 
 body {
   padding-top: 60px;
-  /*font-family: 'Open Sans', sans-serif;*/
   font-family: 'Work Sans', sans-serif;
   font-size: 16px;
 }
 
 table {
   border-radius: 4px;
-  /*width: 100%;*/
 }
 
 .table {
-  /*width: 100px;*/
   border-left: 1px solid #d7d1d1;
   border-right: 1px solid #d7d1d1;
   border-bottom: 1px solid #d7d1d1;
-  /*border-radius: 10px;*/
-  /*vertical-align: middle;*/
 }
 
 thead {
@@ -34,7 +29,6 @@ thead {
 
 
 th {
-  /*font-family: 'Source Sans Pro', sans-serif;*/
   padding: 10px;
   font-weight: 300;
   font-size: 14px;
@@ -46,19 +40,13 @@ thead:hover {
   cursor: pointer;
 }
 
-/*tr:nth-child(even){
-  background-color: #f2f2f2;
-}*/
-
 th {
   font-weight: 300;
   text-align: center;
-  /*padding: 2.25em;*/
 }
 
 td {
   text-align: center;
-  /*font-family: 'Source Sans Pro', sans-serif;*/
   width: 5.625em;
 }
 
@@ -104,9 +92,7 @@ td {
   height: 90vh;
   width: 100%;
   overflow-y: scroll;
-  /*height:100vh;*/
   background: #ffffff;
-  /*height: 100%;*/
   overflow-x: hidden;
   text-align: center;
 
@@ -120,7 +106,6 @@ td {
 
 .credit-score-group {
   width: 100%;
-  /*border-top: 1px solid #dadada;*/
   margin-top: 1em;
 }
 
@@ -183,34 +168,3 @@ td {
   margin-top: 5%;
   width: 90%;
 }
-
-/*.row {
-    margin-left: 0;
-    margin-right: 0;
-}*/
-
-
-/*#status-modal {
-  display: block;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: rgba(0,0,0,0.8);
-  zIndex: 1;
-  opacity:85;
-  overflowY: scroll;
-}
-
-#status {
-  display: block;
-  background-color: #fefefe;
-  margin: 10% auto;
-  border: 1px solid #888;
-  width: 50%;
-  overflow: auto;
-  text-align: center;
-  height: 15em;
-  borde-radius: 0.4em;
-}*/
