@@ -5,13 +5,10 @@ import {FeatureBar, FeatureButton, CreditScoreList} from "./sidebar.jsx";
 import {NavBar} from "./navbar.jsx";
 import {TablePagination} from "./table-pagination.jsx";
 import {RateCard, ReviewStatus} from "./rate-card.jsx";
-// import { Dropdown } from 'semantic-ui-react';
-// import $ from 'react-table'
 
 (function($) {
     'use strict';
-
-
+    
     $(document).ready(() => {
 
       const features =
@@ -56,26 +53,6 @@ import {RateCard, ReviewStatus} from "./rate-card.jsx";
           '#poor',
         ];
 
-      // payment_network_name:null
-      // issuer_name:"Chase"
-      // name:"Southwest Rapid Rewards Premier Business credit card"
-      // description:"NEW CARDMEMBER OFFER 60,000 bonus points after you spend $3,000 on purchases in the first 3 months your account is open.|AT A GLANCE Earn reward flights with no blackout dates. Earn 2x points on Southwest purchases and points on all other purchases. Plus 6,000 anniversary bonus points.|APR 16.49%–23.49% variable APR.|ANNUAL FEE $99 applied to first billing statement."
-      // min_score:720
-      // cash_back:0
-      // travel:2
-      // low_interest:0
-      // zero_percent:0
-      // balance_transfer:0
-      // points:2
-      // gas:0
-      // extended_warranty:0
-      // price_guarantee:0
-      // img:"https://creditcards.chase.com/R-Marketplace/1110008/images/cardart/swa_premier_biz_card.png"
-      // redemption:0.749663
-      // customer_service:0.65049
-      // technology:0.635601
-      // security:-1
-      // credit_building:0.649327
       var card_data = JSON.parse(sessionStorage.getItem("cards"));
       var creditScore = JSON.parse(sessionStorage.getItem("selections")).score;
       // var user_chosen_features = JSON.parse(sessionStorage.getItem("selections"));
@@ -198,6 +175,7 @@ import {RateCard, ReviewStatus} from "./rate-card.jsx";
 
           let chosenFeatures = getChosenFeatures(newSelections);
           let columnHeaders = arrayify_selections(newSelections);
+            
           //ensures chosenFeatures is never empty in case the user never chooses a feature
           if (chosenFeatures.length === 0) {
             chosenFeatures.push("");
@@ -223,11 +201,9 @@ import {RateCard, ReviewStatus} from "./rate-card.jsx";
               technology: qsClass(ids[13]),
             },
             success: data => {
-              // this.setState({cards: p, columns: columnHeaders});
               this.updateCardData(data.data, columnHeaders, chosenFeatures);
             },
           });
-          // }
         }
 
         sortCardData(feature, sortDirection){
@@ -242,10 +218,7 @@ import {RateCard, ReviewStatus} from "./rate-card.jsx";
               return b[feature] - a[feature];
             });
           }
-
           this.setState({cards : cardArray, columns: this.state.columns, chosenFeatures: this.state.chosenFeatures, isSorted: true});
-          // this.state = {cards: this.props.cards, columns: this.props.columns, chosenFeatures: this.props.chosenFeatures, isSorted: false};
-
         }
 
         updateCardData(cardData, columnHeaders, chosen_features) {
@@ -328,49 +301,9 @@ import {RateCard, ReviewStatus} from "./rate-card.jsx";
       class Table extends React.Component {
         constructor(props) {
           super(props);
-          // this.state = {cardData: this.props.cards, isSorted: this.props.isSorted};
-          // this.sortCardData = this.sortCardData.bind(this);
-          // this.compareCardArrays = this.compareCardArrays.bind(this);
         }
 
-        // sortCardData(feature, sortDirection){
-        //   var cardArray = [];
-        //   if (sortDirection === "up") {
-        //     cardArray = this.state.cardData.sort(function(a, b) {
-        //       return a[feature] - b[feature];
-        //     });
-        //   }
-        //   else {
-        //     cardArray = this.state.cardData.sort(function(a, b) {
-        //       return b[feature] - a[feature];
-        //     });
-        //   }
-        //
-        //   this.setState({cardData : cardArray, isSorted: true});
-        // }
-
-        // compareCardArrays(cards1, cards2) {
-        //   if (cards1.length !== cards2.length){
-        //     return false;
-        //   }
-        //   else{
-        //     for (var i = 0; i < cards1.length; i++) {
-        //       if (cards1[i].name != cards2[i].name) {
-        //         return false;
-        //       }
-        //     }
-        //   }
-        //   return true;
-        // }
-
-
         render() {
-          // if (!this.props.isSorted) {
-          //   if (!this.compareCardArrays(this.state.cardData, this.props.cards)) {
-          //     this.setState({cardData: this.props.cards});
-          //   }
-          // }
-
           return (
             <div id="div-for-table" class="table-responsive">
               <table className="table" id="cards_table">
@@ -398,7 +331,6 @@ import {RateCard, ReviewStatus} from "./rate-card.jsx";
         }
 
         render() {
-          // if (!this.props.isSorted)
           return (
             <thead>
               <tr>
@@ -472,7 +404,6 @@ import {RateCard, ReviewStatus} from "./rate-card.jsx";
       class TableRow extends React.Component {
         constructor(props) {
           super(props);
-          // this.state = props;
         }
 
         render () {
@@ -652,9 +583,6 @@ import {RateCard, ReviewStatus} from "./rate-card.jsx";
 
 
       ReactDOM.render(<Results cards={card_data} columns={selections} creditScore={creditScore} chosenFeatures={chosenFeatures}/>, document.getElementById('root'));
-
-      // $("#cards_table").tablesorter();
-
     });
 
 }(jQuery));
