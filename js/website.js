@@ -4,7 +4,6 @@
 
   $(document).ready(() => {
 
-
     const ids = [
       '#cash-back',
       '#travel',
@@ -31,14 +30,6 @@
         }
       });
     });
-
-    //appends rows using card data to a table
-    // function appendRow(card){
-    //   var row_ = "<tr>" + "<th>" + card.name + "</th>" + "<th>" + card.description + "</th>" + "</tr>";
-    //   $("#table-of-cards").append(row_);
-    //   console.log(row_);
-    //
-    // }
 
     $('#go').click(() => {
       const qs = document.querySelector.bind(document);
@@ -89,7 +80,7 @@
            sessionStorage.setItem("cards", JSON.stringify(data.data));
            sessionStorage.setItem("selections", JSON.stringify(selections));
           } else {
-          // Sorry! No Web Storage support..
+            console.log("No web support for session storage.");
           }
           window.location.href = "result.html";
         },
