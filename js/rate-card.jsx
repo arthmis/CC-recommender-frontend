@@ -55,27 +55,17 @@ import ReactDOM from 'react-dom';
           text: $("#review-comments").val(),
         }
 
-      // let urlForRateSubmission = '/results/$' + this.props.cardForReview.id;
       $.ajax({
         url: '/review/',
         method: 'POST',
         data: cardRating,
         success: s => {
-          // this.setState({status: s.status});
-          // setTimeout(this.props.changeModalState(false, this.props.cardForReview, true), 5000);
+
           this.props.changeModalState(false, this.props.cardForReview, true, s.status);
-          // this.setState({status: ""});
-          // let statusDisplay = "<div id='status-modal'> <div id='status'> <p>" + s.status + "</p> </div></div>";
-          // $("#review-comments").append(statusDisplay);
-          // alert(s.status);
           $("#review-comments").val("");
         }
       });
     }
-
-    // componentDidUpdate() {
-    //   this.setState({status: s.status});
-    // }
 
     render(){
       var display;
@@ -112,10 +102,6 @@ import ReactDOM from 'react-dom';
       else {
         display = <img src={this.props.cardForReview.img} height="120" width="204"/>;
       }
-
-      // <button id="exit-modal" style={{fontSize: "2.2em", border: "0 none", backgroundColor: "black", color: "white"}} onClick={this.exitModal}>X</button>
-
-      //column has textAlign center style to allow the centering of submit button and title of card and image
       return(
         <div id="modal" style={modalStyle} onClick={this.exitModal}>
           <div id="rate-this-card" style={rateCardStyle}>
@@ -219,7 +205,6 @@ import ReactDOM from 'react-dom';
         fontSize: "1.0em",
         textAlign: "center", //moves the percentage within the bar
       }
-      // <p>{features[this.props.elementName]}</p>
 
       let name = features[this.props.name] + ":";
       return (
@@ -237,8 +222,6 @@ import ReactDOM from 'react-dom';
     constructor(props) {
       super(props);
       this.exitReviewStatus = this.exitReviewStatus.bind(this);
-      // this.showStatus = this.showStatus.bind(this);
-      // this.state = {status: ""};
     }
 
     exitReviewStatus(event) {
@@ -263,7 +246,6 @@ import ReactDOM from 'react-dom';
       let reviewStatusStyle = {
         backgroundColor: "#ffffff",
         margin: "10% auto", /* 15% from the top and centered */
-        // border: "1px solid #888",
         width: "25em", /* Could be more or less, depending on screen size */
         overflow: "auto",
         textAlign: "center",
