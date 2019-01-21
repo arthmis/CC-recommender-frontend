@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// $(document).ready(() => {
   'use strict';
 
   class FeatureBar extends React.Component {
@@ -128,7 +127,6 @@ import ReactDOM from 'react-dom';
 
 
     shouldComponentUpdate(nextProps, nextState) {
-      // this.state = {isToggleOn: false, className: "features-check-box"}
       if (this.state.isToggleOn !== nextState.isToggleOn && this.state.className !== nextState.className){
         return true;
       }
@@ -151,9 +149,6 @@ import ReactDOM from 'react-dom';
     }
 
     render() {
-      // if (this.props.chosenFeatures[0] === "") {
-      //   this.setState({isToggleOn: false, className: "features-check-box"});
-      // }
       return (
         <button type="button" id={this.props.id} className={this.state.className} onClick={this.handleClick}>
           {this.props.featureImage}
@@ -163,11 +158,4 @@ import ReactDOM from 'react-dom';
     }
   }
 
-  // var root = document.getElementById('root');
-
-  //  ReactDOM.render(<FeatureBar creditScore="hello World"/>, document.getElementById('root'));
   export {FeatureBar, FeatureButton, CreditScoreList};
-
-  // }
-
-// });
