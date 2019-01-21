@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import {Modal} from 'react-bootstrap';
 import {FeatureBar, FeatureButton, CreditScoreList} from "./sidebar.jsx";
 import {NavBar} from "./navbar.jsx";
 import {TablePagination} from "./table-pagination.jsx";
